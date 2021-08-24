@@ -1,3 +1,4 @@
+import 'package:beating_app/screens/homepage.dart';
 import 'package:beating_app/style/style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -93,9 +94,10 @@ class SingUpScreen extends StatelessWidget {
                     sizeboxxx(1),
                     InkWell(
                       onTap: () {
+                        Get.to(HomePage());
                         Get.snackbar(
                           "Authentication",
-                          "Your are now login",
+                          "Your are now Signed",
                           colorText: Colors.white,
                           icon: Icon(Icons.person, color: Colors.white),
                           snackPosition: SnackPosition.BOTTOM,
