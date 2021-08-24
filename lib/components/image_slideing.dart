@@ -29,7 +29,7 @@ class _ImageSlidingState extends State<ImageSliding> {
       child: CarouselSlider.builder(
           key: _sliderKey,
           enableAutoSlider: true,
-          autoSliderDelay: Duration(seconds: 2),
+          autoSliderDelay: Duration(seconds: 5),
           unlimitedMode: true,
           slideBuilder: (index) {
             return Container(

@@ -1,4 +1,6 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:beating_app/components/image_slideing.dart';
+import 'package:beating_app/style/style.dart';
 import 'package:flutter/material.dart';
 
 class AuthScreen extends StatelessWidget {
@@ -37,6 +39,69 @@ class AuthScreen extends StatelessWidget {
                 color: Color(0xff2767ba),
                 child: ImageSliding(),
               ),
+              SizedBox(height: 20),
+              Container(
+                height: 40,
+                width: mediaQueryWigttScreen,
+                decoration: BoxDecoration(color: Colors.transparent),
+                child: DefaultTextStyle(
+                  style: const TextStyle(
+                    fontSize: 20.0,
+                  ),
+                  child: Center(
+                    child: AnimatedTextKit(
+                      repeatForever: true,
+                      animatedTexts: [
+                        WavyAnimatedText('Welcome to',
+                            textStyle: textStyleForSliding),
+                        WavyAnimatedText(' Beatting App',
+                            textStyle: textStyleForSliding),
+                      ],
+                      isRepeatingAnimation: true,
+                      onTap: () {
+                        print("Tap Event");
+                      },
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 40),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    alignment: Alignment.center,
+                    height: 40,
+                    width: 150,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5)),
+                    child: Text("Login", style: textStyleBlackDefult),
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    height: 40,
+                    child: Text(
+                      "OR",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    height: 40,
+                    width: 150,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5)),
+                    child: Text("Sign Up", style: textStyleBlackDefult),
+                  ),
+                ],
+              ),
+              SizedBox(height: 80),
+              Text(
+                "What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book it has?",
+                style: textStyleWhiteDefult,
+              )
             ],
           ),
         ),
