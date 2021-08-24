@@ -55,9 +55,9 @@ class AuthScreen extends StatelessWidget {
                     child: AnimatedTextKit(
                       repeatForever: true,
                       animatedTexts: [
-                        WavyAnimatedText('Welcome to',
+                        WavyAnimatedText('Welcome To',
                             textStyle: textStyleForSliding),
-                        WavyAnimatedText(' Beatting App',
+                        WavyAnimatedText('3psports',
                             textStyle: textStyleForSliding),
                       ],
                       isRepeatingAnimation: true,
