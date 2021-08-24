@@ -1,7 +1,10 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:beating_app/components/image_slideing.dart';
+import 'package:beating_app/screens/login_screen.dart';
+import 'package:beating_app/screens/singup_screen.dart';
 import 'package:beating_app/style/style.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({Key? key}) : super(key: key);
@@ -14,7 +17,7 @@ class AuthScreen extends StatelessWidget {
       body: Container(
         height: mediaQueryHightScreen,
         width: mediaQueryWigttScreen,
-        color: Color(0xff2767ba),
+        color: themeColorsMain,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Column(
@@ -36,7 +39,7 @@ class AuthScreen extends StatelessWidget {
               Container(
                 height: 150,
                 width: mediaQueryWigttScreen,
-                color: Color(0xff2767ba),
+                color: themeColorsMain,
                 child: ImageSliding(),
               ),
               SizedBox(height: 20),
@@ -69,14 +72,19 @@ class AuthScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    alignment: Alignment.center,
-                    height: 40,
-                    width: 150,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(5)),
-                    child: Text("Login", style: textStyleBlackDefult),
+                  InkWell(
+                    onTap: () {
+                      Get.to(LoginScreen());
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: 40,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(5)),
+                      child: Text("Login", style: textStyleBlackDefult),
+                    ),
                   ),
                   Container(
                     alignment: Alignment.center,
@@ -86,14 +94,19 @@ class AuthScreen extends StatelessWidget {
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
-                  Container(
-                    alignment: Alignment.center,
-                    height: 40,
-                    width: 150,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(5)),
-                    child: Text("Sign Up", style: textStyleBlackDefult),
+                  InkWell(
+                    onTap: () {
+                      Get.to(SingUpScreen());
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: 40,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(5)),
+                      child: Text("Sign Up", style: textStyleBlackDefult),
+                    ),
                   ),
                 ],
               ),
